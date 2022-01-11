@@ -12,25 +12,35 @@ const User = require('./models/user');
 const port = process.env.PORT || 8000;
 
 
+const DB = 'mongodb+srv://Sanchit:sanchitcode@cluster0.x4rvz.mongodb.net/e-commerce?retryWrites=true&w=majority'
+mongoose.connect(DB,{
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify:false,
+        useCreateIndex:true
+}).then(()=>{
+    console.log('Database connected');
+}).catch((err)=> console.log('No connection'));
+
 // Routes
 const productRoutes = require('./routes/product');
 const authRoutes = require('./routes/auth');
 const cartRoutes = require('./routes/cart');
 
-mongoose.connect('mongodb://localhost:27017/shopApp',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useFindAndModify:false,
-        useCreateIndex:true
-    })
-    .then(() => {
-        console.log("DB Connected");
-    })
-    .catch((err) => {
-        console.log("OH NO ERROR!!!");
-        console.log(err);
-    });
+// mongoose.connect('mongodb://localhost:27017/shopApp',
+//     {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//         useFindAndModify:false,
+//         useCreateIndex:true
+//     })
+//     .then(() => {
+//         console.log("DB Connected");
+//     })
+//     .catch((err) => {
+//         console.log("OH NO ERROR!!!");
+//         console.log(err);
+//     });
 
 
 // seedDB();
