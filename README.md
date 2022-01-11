@@ -1,6 +1,5 @@
 # Shopping-Arena-App
-<br>
-<img src=""></img>
+
 
 <h2>About this Project: </h2>
 <pre>
