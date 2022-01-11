@@ -10,8 +10,9 @@ It allows the users to view and choose among various products of their choice, a
 To the admin it provides many exclusive features like adding new products,deleting the unused ones, changing their prices and descriptions and overall managing the website. <br>
 Check out the details section down below to use the application. Hope you have a good experience. 
 <br>
-Project Deployed At : https://shopping-arena-app.herokuapp.com/
+
 </pre>
+Project Deployed At : https://shopping-arena-app.herokuapp.com/
 
 <h2>Built With: </h2>
 <pre>HTML | CSS | JAVASCRIPT | EMBEDDED JAVASCRIPT | NODEJS | EXPRESS | MONGODB  </pre>
