@@ -32,6 +32,12 @@ router.post('/register', async (req, res) => {
     }
 });
 
+// router.get('/delete', async (req, res) => {
+    
+//     res.render('auth/delete');
+// });
+
+
 
 // Get the login form
 router.get('/login', async (req, res) => {
@@ -46,7 +52,13 @@ router.post('/login',
             failureFlash: true
         }
     ), (req, res) => {
-        req.flash('success', `Welcome Back!! ${req.user.username}`)
+        if(req.user.username=="sanchit-narang")
+        req.flash('success', `Welcome Back Admin!!`)
+        else
+        req.flash('success', `Welcome Back ${req.user.username} !!`)
+
+
+        
         res.redirect('/products');
 });
 

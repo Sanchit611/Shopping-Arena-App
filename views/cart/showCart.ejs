@@ -30,7 +30,7 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title"><%=item.name%></h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text">BEST OFFER! BUY NOW!!</p>
                 
                 <form action="/user/<%=currentUser._id%>/cart/<%=item._id%>?_method=DELETE" method="post">
                   <button class="btn btn-sm btn-danger">remove</button>
@@ -68,6 +68,17 @@
     </div>
 
 </div>
+<center>
 
+  <h3>Expected Delivery Date</h3>
+  <h4 id="p1"></h4>
+  <script>
+    var date = new Date();
+    var current_date = date.getDate()+5 + "-" + (date.getMonth()+1) + "-" + date.getFullYear();
+      document.getElementById("p1").innerHTML = current_date;
+   
+   
+  </script>
+</center>
 
 <%- include("../partials/footer")%>

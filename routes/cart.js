@@ -17,6 +17,18 @@ router.get('/user/:userId/cart',isLoggedIn,async (req, res) => {
     }
 })
 
+router.get('/user/:userId/wallet',isLoggedIn,async (req, res) => {
+    
+    try {
+        const user = await User.findById(req.params.userId).populate('cart');
+        res.render('cart/showWallet', { userCart: user.cart });
+    }
+    catch (e) {
+        req.flash('error', 'Unable to Add this product');
+        res.render('error');
+    }
+})
+
 
 
 router.post('/user/:id/cart', isLoggedIn, async (req, res) => {
@@ -44,8 +56,13 @@ router.delete('/user/:userid/cart/:id', async(req, res) => {
     await User.findByIdAndUpdate(userid,{$pull:{cart:id}})
     res.redirect(`/user/${req.user._id}/cart`);
 })
+router.delete('/user/:userid/wallet/:id', async(req, res) => {
 
-router.get('/cart/payment', (req, res) => {
+    const { userid, id } = req.params;
+    await User.findByIdAndUpdate(userid,{$pull:{cart:id}})
+    res.redirect(`/user/${req.user._id}/wallet`);
+})
+router.get('/cart/payment', isLoggedIn, (req, res) => {
     res.render('payment/payment')
 })
 

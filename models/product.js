@@ -16,6 +16,11 @@ const productSchema = new mongoose.Schema({
     desc: {
         type: String
     },
+    qty:{
+        type: Number,
+        default: 0,
+        min: 0,
+    },
     reviews: [
         {
             type: mongoose.Schema.Types.ObjectId,

@@ -23,8 +23,8 @@ router.get('/products', async(req, res) => {
 router.get('/products/new',isLoggedIn, (req, res) => {
 
     res.render('products/new');
-})
 
+})
 
 // Create New Product
 router.post('/products',isLoggedIn,async(req, res) => {

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Product = require('./models/product');
+const User = require('./models/user')
 
 
 const products = [
@@ -48,10 +49,27 @@ const products = [
 
 ]
 
+const users = [
+    {
+        email: "Swapnil",
+    }
+
+]
+
 const seedDB = async ()=>{
     
     await Product.insertMany(products);
     console.log("DB Seeded");
+
+
+}
+const seedDB1= async ()=>{
+    
+    await User.insertMany(users);
+    console.log("DB Seeded");
+
+    
 }
 
 module.exports = seedDB;
+module.exports = seedDB1;
